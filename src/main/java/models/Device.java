@@ -20,7 +20,7 @@ public class Device {
 	private Long id;
 	
 	
-	@Column(name = "name", nullable = false)
+	@Column(name = "name", nullable = false, unique = true)
 	private String name;
 	
 	@Column(name = "category", nullable = false)
@@ -33,4 +33,7 @@ public class Device {
 	
 	@Column(name = "status", nullable = false)
 	private String status;
+	
+	@Column(name = "ip_address", nullable = false, length = 39, unique = true)
+	private String ip;
 }
