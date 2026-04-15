@@ -12,13 +12,6 @@ public class DeviceService {
 	private final DeviceRepository deviceRepo;
 	
 	
-	private static final List <Device> DEVICES - List.of(
-			
-			
-			
-			
-			)
-	
 	
 	public DeviceService(DeviceRepository deviceRepo) {
 		
@@ -26,6 +19,9 @@ public class DeviceService {
 	}
 	
 	
+	public List <DeviceRepository> listDevices{
+		return deviceRepo.findAll();
+	}
 	
 
 }

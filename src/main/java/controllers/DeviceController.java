@@ -18,7 +18,7 @@ public class DeviceController {
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List <Device> findAll(){
-		
+		return deviceService.fin
 	}
 
 }
