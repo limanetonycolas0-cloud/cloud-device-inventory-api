@@ -2,8 +2,11 @@ package services;
 
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import org.springframework.stereotype.Service;
 
+import dto.DeviceDto;
 import models.Device;
 import repositories.DeviceRepository;
 
@@ -23,7 +26,32 @@ public class DeviceService {
 		return deviceRepo.findAll();
 	}
 	
-	public void createDevice(){
+	public Device createNewDevice(DeviceDto deviceDto) {
 		
+		Device newDevice = new Device();
+		
+		newDevice.setName(deviceDto.getName());
+		newDevice.setDeviceType(deviceDto.getDeviceType());
+		newDevice.setOs(deviceDto.getOs());
+		
+		
+		return deviceRepo.save(newDevice);
+		
+	}
+	
+	
+	
+	
+	
+	
+	public void ensureDeviceIsUnique(DeviceRepository deviceRepo, Device device){
+		
+		try{
+			deviceRepo.save(device);
+		}
+
+		catch(RuntimeException e){
+			throw new RuntimeErrorException("You cannot register the same device twice");
+		}
 	}
 }

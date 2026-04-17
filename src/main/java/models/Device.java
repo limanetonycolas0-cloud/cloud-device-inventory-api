@@ -11,8 +11,6 @@ import lombok.Setter;
 
 @Table(name = "tb_devices")
 @Entity
-@Getter
-@Setter
 public class Device {
 	
 	@Id
@@ -24,7 +22,7 @@ public class Device {
 	private String name;
 	
 	@Column(name = "category", nullable = false)
-	private DeviceCategory deviceType;
+	private String deviceType;
 	
 	
 	@Column(name = "os")
@@ -36,4 +34,55 @@ public class Device {
 	
 	@Column(name = "ip_address", nullable = false, length = 39, unique = true)
 	private String ip;
+	
+	
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public DeviceCategory getDeviceType() {
+		return deviceType;
+	}
+
+	public void setDeviceType(String deviceType) {
+		this.deviceType = deviceType;
+	}
+
+	public String getOs() {
+		return os;
+	}
+
+	public void setOs(String os) {
+		this.os = os;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
 }
