@@ -51,7 +51,10 @@ public class DeviceService {
 		}
 
 		catch(RuntimeException e){
-			throw new RuntimeErrorException("You cannot register the same device twice");
+			throw new RuntimeException("You cannot register the same device twice");
 		}
 	}
+	
+	
+	
 }
