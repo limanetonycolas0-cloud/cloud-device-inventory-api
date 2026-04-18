@@ -2,10 +2,10 @@ package services;
 
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
+
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException.NotFound;
+
 
 import dto.DeviceDto;
 import models.Device;

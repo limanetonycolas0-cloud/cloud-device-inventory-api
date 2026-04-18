@@ -6,8 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+
 
 @Table(name = "tb_devices")
 @Entity
@@ -54,7 +53,7 @@ public class Device {
 		this.name = name;
 	}
 
-	public DeviceCategory getDeviceType() {
+	public String getDeviceType() {
 		return deviceType;
 	}
 
