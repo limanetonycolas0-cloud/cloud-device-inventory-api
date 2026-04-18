@@ -5,6 +5,7 @@ import java.util.List;
 import javax.management.RuntimeErrorException;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException.NotFound;
 
 import dto.DeviceDto;
 import models.Device;
@@ -27,13 +28,10 @@ public class DeviceService {
 	}
 	
 	public Device createNewDevice(DeviceDto deviceDto) {
-		
 		Device newDevice = new Device();
-		
 		newDevice.setName(deviceDto.getName());
 		newDevice.setDeviceType(deviceDto.getDeviceType());
 		newDevice.setOs(deviceDto.getOs());
-		
 		
 		return deviceRepo.save(newDevice);
 		
@@ -41,20 +39,22 @@ public class DeviceService {
 	
 	
 	
-	
-	
-	
 	public void ensureDeviceIsUnique(DeviceRepository deviceRepo, Device device){
-		
 		try{
 			deviceRepo.save(device);
 		}
-
 		catch(RuntimeException e){
 			throw new RuntimeException("You cannot register the same device twice");
 		}
 	}
 	
+
+
+	public void deleteById(Long id){
+		if(!deviceRepo.existsById(id)){
+			throw new RuntimeException("Id not found!");	
+		}
+	}
 	
-	
+
 }
