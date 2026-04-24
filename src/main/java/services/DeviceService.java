@@ -32,6 +32,8 @@ public class DeviceService {
 		newDevice.setName(deviceDto.getName());
 		newDevice.setDeviceType(deviceDto.getDeviceType());
 		newDevice.setOs(deviceDto.getOs());
+		newDevice.setIp(deviceDto.getIp());
+		newDevice.setStatus(deviceDto.getStatus());
 		
 		return deviceRepo.save(newDevice);
 		
