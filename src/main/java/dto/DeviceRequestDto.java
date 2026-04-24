@@ -3,10 +3,8 @@ package dto;
 import jakarta.validation.constraints.NotBlank;
 
 
+public class DeviceRequestDto{
 
-public class DeviceDto{
-
-	
 	@NotBlank
     private String name;
     

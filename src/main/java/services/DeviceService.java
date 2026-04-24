@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 
-import dto.DeviceDto;
+import dto.DeviceRequestDto;
 import models.Device;
 import repositories.DeviceRepository;
 
@@ -27,7 +27,7 @@ public class DeviceService {
 		return deviceRepo.findAll();
 	}
 	
-	public Device createNewDevice(DeviceDto deviceDto) {
+	public Device createNewDevice(DeviceRequestDto deviceDto) {
 		Device newDevice = new Device();
 		newDevice.setName(deviceDto.getName());
 		newDevice.setDeviceType(deviceDto.getDeviceType());
